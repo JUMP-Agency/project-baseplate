@@ -10,7 +10,10 @@ What's included:
 
 To get started, open up terminal in your projects git root. I say `git root` because there is no purpose in linting an entire WordPress installation for example, when we only care about the `themes` directory.
 
+Execute the command:
+
 ```git clone https://github.com/JUMP-Agency/project-baseplate . && npm install```
+
 Next, you'll want to set up the paths to your scss and js directories for the linters to find in your package.json
 
 ````
