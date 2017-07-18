@@ -1,5 +1,5 @@
 options:
-  formatter: stylish
+  formatter: table
 files:
   include: '**/*.s+(a|c)ss'
   output-file: 'linters/sass-lint.html'
