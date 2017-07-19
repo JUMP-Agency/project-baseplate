@@ -14,7 +14,7 @@ Requirements:
   
 ---
 
-To get started, open up terminal in your projects git root. I say `git root` because there is no purpose in linting an entire WordPress installation for example, when we only care about the `themes` directory.
+To get started, open up terminal in your projects `git root`.
 
 Execute the command:
 
@@ -32,7 +32,9 @@ Next, you'll want to set up the paths to your scss and js directories for the li
   ...
 ````
 
-In the future, these tasks will be combined into the build process but for now are listed separate and will need to be invoked manually.
+Now, whenever you make a commit the linters are run and if an error occurs the commit is not executed. You can however, force the commit to go through using the command:
+
+```git commit -n```
 
 ## Rules Used ##
 
