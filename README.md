@@ -21,7 +21,7 @@ Next, you'll want to set up the paths to your scss and js directories for the li
 ````
   ...
   "scripts": {
-    "eslint": "./node_modules/.bin/eslint js/**/*.js --format table; exit 0",
+    "eslint": "./node_modules/.bin/eslint js/**/*.js --format table",
     "sasslint": "./node_modules/.bin/sass-lint -c ./sass-lint.yml 'scss/**/*.scss' -v -q",
     ...
   }
