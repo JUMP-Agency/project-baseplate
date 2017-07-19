@@ -1,4 +1,4 @@
-# Project Baseplate
+# Project Baseplate [![Dev Dependency Status](https://david-dm.org/jump-agency/project-baseplate/dev-status.svg)](https://david-dm.org/jump-agency/project-baseplate?type=dev) # 
 This is intended to serve as a base when initializing new projects to lay the foundations for good coding practices throughout it's lifecycle. Included are also git pre-commit hooks that run the linters before any commits are made. If errors  are found in the project the commit is rejected along with detailed reports.
 
 What's included:
