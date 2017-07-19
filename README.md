@@ -8,6 +8,10 @@ What's included:
   - [sasslint](https://github.com/sasstools/sass-lint)
   - ~Webpack~ (future release)
   
+Requirements:
+  - node
+  - npm
+  
 ---
 
 To get started, open up terminal in your projects git root. I say `git root` because there is no purpose in linting an entire WordPress installation for example, when we only care about the `themes` directory.
