@@ -22,7 +22,7 @@ Execute the command:
 
 Then, move the files out of the git generated `project-baseplate` and into your `cwd` using the command:
 
-``` mv project-baseplate/* . && rm -R project-baseplate```
+``` mv project-baseplate/* . && rm -rf project-baseplate```
 
 Next, you'll want to set up the paths to your scss and js directories for the linters to find in your package.json
 
