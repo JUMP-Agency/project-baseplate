@@ -24,13 +24,20 @@ Execute the command:
 git clone https://github.com/JUMP-Agency/project-baseplate && cd project-baseplate
 ```
 
+Next, we need to ensure that git histories are not combined when we move the project to our root.
+
+```shell
+rm -rf .git
+```
+
 Then, move the files out of the git generated `project-baseplate` and into your `cwd` using the command:
 
 ```shell
-mv project-baseplate/* . && rm -rf project-baseplate
+mv project-baseplate/{,.}* .
 ```
 
 Lastly
+
 ```shell
 npm install
 ```
