@@ -18,15 +18,19 @@ To get started, open up terminal in your projects `git root`.
 
 Execute the command:
 
-```git clone https://github.com/JUMP-Agency/project-baseplate && cd project-baseplate && npm install```
+```shell
+git clone https://github.com/JUMP-Agency/project-baseplate && cd project-baseplate && npm install
+```
 
 Then, move the files out of the git generated `project-baseplate` and into your `cwd` using the command:
 
-``` mv project-baseplate/* . && rm -rf project-baseplate```
+```shell
+mv project-baseplate/* . && rm -rf project-baseplate
+```
 
 Next, you'll want to set up the paths to your scss and js directories for the linters to find in your package.json
 
-````
+````json
   ...
   "scripts": {
     "eslint": "./node_modules/.bin/eslint js/**/*.js --format table",
@@ -38,7 +42,9 @@ Next, you'll want to set up the paths to your scss and js directories for the li
 
 Now, whenever you make a commit the linters are run and if an error occurs the commit is not executed. You can however, force the commit to go through using the command:
 
-```git commit -n```
+```shell
+git commit -n
+```
 
 ## Rules Used ##
 
