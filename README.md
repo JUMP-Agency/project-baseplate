@@ -30,7 +30,11 @@ Then, move the files out of the git generated `project-baseplate` and into your 
 mv project-baseplate/* . && rm -rf project-baseplate
 ```
 
-Lastly, run an `npm install` to grab the dependencies and update any existing `git hooks` that are already in place.
+Lastly
+```shell
+npm install
+```
+
 
 ### Configure the package.json
 
