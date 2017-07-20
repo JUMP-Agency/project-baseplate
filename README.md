@@ -14,12 +14,14 @@ Requirements:
   
 ---
 
+## Installing
+
 To get started, open up terminal in your projects `git root`.
 
 Execute the command:
 
 ```shell
-git clone https://github.com/JUMP-Agency/project-baseplate && cd project-baseplate && npm install
+git clone https://github.com/JUMP-Agency/project-baseplate && cd project-baseplate
 ```
 
 Then, move the files out of the git generated `project-baseplate` and into your `cwd` using the command:
@@ -27,6 +29,10 @@ Then, move the files out of the git generated `project-baseplate` and into your 
 ```shell
 mv project-baseplate/* . && rm -rf project-baseplate
 ```
+
+Lastly, run an `npm install` to grab the dependencies and update any existing `git hooks` that are already in place.
+
+### Configure the package.json
 
 Next, you'll want to set up the paths to your scss and js directories for the linters to find in your package.json
 
