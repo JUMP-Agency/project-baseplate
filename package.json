@@ -2,9 +2,21 @@
   "name": "project-baseplate",
   "version": "1.1.0",
   "description": "A baseplate (not boilerplate) project setup to include linting and hinting",
+  "paths": {
+    "scss": {
+      "input": "./scss",
+      "output": "./dist/css/style.css",
+      "entry": "/app.scss"
+    },
+    "js": {
+      "input": "./js",
+      "output": "./dist/js/index.js",
+      "entry": "/index.js"
+    }
+  },
   "scripts": {
-    "eslint": "./node_modules/.bin/eslint js/**/*.js --format table",
-    "sasslint": "./node_modules/.bin/sass-lint -c ./sass-lint.yml 'scss/**/*.scss' -v -q"
+    "eslint": "./node_modules/.bin/eslint $npm_package_paths_js_input/**/*.js --format table",
+    "sasslint": "./node_modules/.bin/sass-lint -c ./sass-lint.yml $npm_package_paths_scss_input/**/*.scss -v -q"
   },
   "pre-commit": [
     "eslint",
