@@ -6,7 +6,7 @@ What's included:
   - [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
   - [pre-commit](https://github.com/observing/pre-commit)
   - [sasslint](https://github.com/sasstools/sass-lint)
-  - ~Webpack~ (future release)
+  - [Webpack](https://webpack.github.io/)
   
 Requirements:
   - node
@@ -42,20 +42,46 @@ Lastly
 npm install
 ```
 
+---
+
 
 ### Configure the package.json
 
-Next, you'll want to set up the paths to your scss and js directories for the linters to find in your package.json
+Next, you'll want to set up the paths to your scss and js directories for the linters to find in your package.json. Replace the paths with your asset paths.
 
 ````json
   ...
-  "scripts": {
-    "eslint": "./node_modules/.bin/eslint js/**/*.js --format table",
-    "sasslint": "./node_modules/.bin/sass-lint -c ./sass-lint.yml 'scss/**/*.scss' -v -q",
-    ...
-  }
+  "paths": {
+      "scss": {
+       "input": "./scss",
+        "output": "./dist/css/"
+      },
+      "js": {
+        "input": "./js",
+        "output": "./dist/js/"
+      }
+    },
   ...
 ````
+
+#### Windows Users
+
+You will need to update the variables inside of the scripts property.
+
+```json
+"scripts": {
+      "eslint": "./node_modules/.bin/eslint $npm_package_paths_js_input/**/*.js --format table",
+          "sasslint": "./node_modules/.bin/sass-lint -c ./sass-lint.yml $npm_package_paths_scss_input/**/*.scss -v -q"
+    },
+```
+
+Replace the following:
+
+ - `$npm_package_paths_scss_input`  => `%$npm_package_paths_scss_input%`
+ - `$npm_package_paths_js_input`    => `%npm_package_paths_js_input%`
+
+
+--- 
 
 Now, whenever you make a commit the linters are run and if an error occurs the commit is not executed. You can however, force the commit to go through using the command:
 
@@ -66,6 +92,7 @@ git commit -n
 ## Rules Used ##
 
 #### SASS ####
+
 ```
   # Extends
   extends-before-mixins: 2
