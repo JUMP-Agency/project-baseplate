@@ -1,29 +1,27 @@
 const webpack = require("webpack");
 const path = require("path");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 
 /* Modify the entry and output properties to point to your assets */
 module.exports = {
-  entry: "./js/index.js",
+  entry: ["./js/index.js", "./scss/app.scss"],
   output: {
     path: __dirname,
     filename: "./dist/bundle.js",
   },
-  devtool: "source-map",
+  plugins: [
+    new ExtractTextPlugin({
+      filename: "dist/[name].bundle.css",
+      allChunks: true,
+    }),
+  ],
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
       {
         test: /\.scss$/,
-        use: [{
-          loader: "style-loader",
-        }, {
-          loader: "css-loader",
-        }, {
-          loader: "sass-loader",
-          options: {
-            includePaths: ["./scss"],
-          }
-        }],
+        loader: ExtractTextPlugin.extract(["css-loader", "sass-loader"]),
       },
     ],
   },
