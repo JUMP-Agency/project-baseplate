@@ -1,6 +1,6 @@
 {
   "name": "project-baseplate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A baseplate (not boilerplate) project setup to include linting and hinting",
   "scripts": {
     "eslint": "./node_modules/.bin/eslint js/**/*.js --format table",
@@ -11,12 +11,18 @@
     "sasslint"
   ],
   "author": "Aaron Arney",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-plugin-import": "^2.7.0",
+    "node-sass": "^4.5.3",
     "pre-commit": "^1.2.2",
-    "sass-lint": "^1.10.2"
+    "sass-lint": "^1.10.2",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.4.1"
   }
 }
