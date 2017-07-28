@@ -1,21 +1,20 @@
 const webpack = require("webpack");
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
-/* Change the constants to your asset paths */
-const cssOutputPath = "./dist/css/";
-const jsOutputPath = "./dist/js/";
+const pkg = require("./package.json");
+const cssPath = pkg.paths.scss;
+const jsPath = pkg.paths.js;
 
 
 module.exports = {
-  entry: ["./js/index.js", "./scss/app.scss"],
+  entry: [jsPath.input + jsPath.entry, cssPath.input + cssPath.entry],
   output: {
     path: __dirname,
-    filename: path.join(jsOutputPath, "app.js"),
+    filename: jsPath.output,
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: path.join(cssOutputPath, "styles.css"),
+      filename: cssPath.output,
       allChunks: true,
     }),
   ],
